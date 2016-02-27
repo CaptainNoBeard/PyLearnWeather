@@ -1,0 +1,10 @@
+<title>Weather in {{ d.city }}</title>
+<body bgcolor = 000000>
+    <h1 style = "color:#00ffff">Weather:</h1>
+    <form action="/" method="POST">
+        <h2 style = "color:#00ffff">City/Area?</h2><input type="text" name="city"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <h2 style = "color:#00ffff">The temperature in {{ d.city }} is {{ d.temp }} degrees Fahrenheit, much like being on {{planet}}.</h2>
+    <img src="/static/{{planet}}.jpg">
+</body>
