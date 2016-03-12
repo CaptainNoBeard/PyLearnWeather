@@ -1,7 +1,35 @@
-import urllib2
+http://api.openweathermap.org/data/2.5/find?q=' + city + '&APPID=00f50410f3be76791e808067\
+7ad6df97import urllib2
+import json
 
+def get_weather_temp(city='nyc'):
+    url = 'http://api.openweathermap.org/data/2.5/find?q=' + city + '&APPID=00f50410f3be76791e8080677ad6df97'
+    u = urllib2.urlopen( url )
+    result = json.loads(u.read())
 
-def get_gut():
-    url = urllib2.urlopen( 'http://www.gutenberg.org/ebooks/1228')
-    text = u.read()
-    return text
+    print result    
+    return result['list'][0]['main']['temp']
+
+def get_weather_humidity(city='nyc'):
+    url = 'http://api.openweathermap.org/data/2.5/find?q=' + city + '&APPID=00f50410f3be76791e8080677ad6df97'
+    u = urllib2.urlopen( url )
+    result = json.loads(u.read())
+
+    print result
+    return result['list'][0]['main']['humidity']
+
+def get_weather_windspeed(city='nyc'):
+    url = 'http://api.openweathermap.org/data/2.5/find?q=' + city + '&APPID=00f50410f3be76791e8080677ad6df97'
+    u = urllib2.urlopen( url )
+    result = json.loads(u.read())
+
+    print result
+    return result['list'][0]['wind']['speed']
+
+def get_weather_windtemp(city='nyc'):
+    url = 'http://api.openweathermap.org/data/2.5/find?q=' + city + '&APPID=00f50410f3be76791e8080677ad6df97'
+    u = urllib2.urlopen( url )
+    result = json.loads(u.read())
+
+    print result
+    return result['list'][0]['wind']['deg']

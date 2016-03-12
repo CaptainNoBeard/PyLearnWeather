@@ -11,8 +11,10 @@ def root( ):
             city=city[:city.find(" ")]+"_"+city[city.find(" ")+1:]
     else:
         city="New_York_City"
-    temp = util.get_weather(city)
-    temp = (temp-273.15)*1.8+32
+    temp = util.get_weather_temp(city)
+    humidity = util.get_weather_humidity(city)
+    windspeed = util.get_weather_windspeed(city)
+    minmaxtemp = util.get_weather_tempminmax(city)
     while "_" in city:
             city=city[:city.find("_")]+" "+city[city.find("_")+1:]
     if temp <=0:
@@ -35,9 +37,9 @@ def root( ):
         planet = "Jupiter"
     elif temp >100:
         planet = "Sun"
-    d = { 'city':city, 'temp':temp }
+    d = { 'city':city, 'temp':temp, 'humidity':humidity, 'windspeed':windspeed, 'minmaxtemp':minmaxtemp }
     return render_template( 'index.html', d = d, planet = planet)
 
 if __name__ == '__main__':
     app.debug = True
-    app.run( port = 5001 )
+    app.run( port = 5004 )
