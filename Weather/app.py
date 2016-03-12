@@ -9,6 +9,8 @@ def root( ):
         city=request.form["city"]
         while " " in city:
             city=city[:city.find(" ")]+"_"+city[city.find(" ")+1:]
+            if city == "" or city == " " or city == "/":
+                city="New_York_City"
     else:
         city="New_York_City"
     temp = util.get_weather_temp(city)

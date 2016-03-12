@@ -1,10 +1,10 @@
-<title>Weather in {{ d.city }}</title>
+<title>Weather in {{ d.city }}, Planet {{planet}}</title>
 <body bgcolor = 000000>
     <h1 style = "color:#00ffff">Weather:</h1>
     <form action="/" method="POST">
         <h2 style = "color:#00ffff">City/Area?</h2><input type="text" name="city"><br>
         <input type="submit" value="Submit">
     </form>
-    <h2 style = "color:#00ffff">The temperature in {{ d.city }} is {{ d.temp }} degrees Fahrenheit, much like being on {{planet}}. The minimum temperature is {{ d.minmaxtemp }}. The humidity is {{ d.humidity }}%. The wind speed is {{ d.windspeed }} mph.</h2>
+    <h2 style = "color:#00ffff">The temperature in {{ d.city }} is {{ d.temp }} degrees Fahrenheit, much like being on {{planet}}. The minimum temperature is {{ d.minmaxtemp }}. The humidity is {{ d.humidity }}%. The wind speed is {{ d.windspeed }} miles per hour.</h2>
     <img src="/static/{{planet}}.jpg">
 </body>
