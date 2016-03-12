@@ -33,4 +33,7 @@ def get_weather_tempminmax(city='nyc'):
     print result
     mintemp = result['list'][0]['main']['temp_min']
     maxtemp = result['list'][0]['main']['temp_max']
-    return str(mintemp) + ' degrees Farenheit and the maximum temperature is ' + str(maxtemp) + ' degrees Farenheit'
+    if mintemp == maxtemp:
+        return 'not currently available; neither is the maximum temperature'
+    else:
+        return str(mintemp) + ' degrees Farenheit and the maximum temperature is ' + str(maxtemp) + ' degrees Farenheit'
