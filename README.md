@@ -4,5 +4,5 @@ Basic API/Flask test. Uses the OpenWeatherMap API. Requires flask to be installe
 All images used are licensed under Creative Commons Fair Use. This program was not made with the intent to earn profit, nor will it ever do so.
 Made using IDLE (https://www.python.org/downloads/), OSX Terminal, iTerm2 (https://www.iterm2.com/downloads.html), Brackets (http://brackets.io), and, of course, emacs (https://www.gnu.org/software/emacs/).
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-c-x c-hail-emacs <br>
-The church of emacs is the one true path
+C-x C-hail-emacs <br>
+$ The church of emacs is the one true path
