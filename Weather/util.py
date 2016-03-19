@@ -37,3 +37,8 @@ def get_country(city='nyc'):
     geturl(city)
     print result
     return result['list'][0]['sys']['country']
+
+def get_real_city(city='nyc'):
+    geturl(city)
+    print result
+    return result['list'][0]['name']

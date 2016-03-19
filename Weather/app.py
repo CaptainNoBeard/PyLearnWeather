@@ -10,14 +10,15 @@ def root( ):
         while " " in city:
             city=city[:city.find(" ")]+"_"+city[city.find(" ")+1:]
             if city == "" or city == " " or city == "/" or city == "nyc":
-                city="New_York_City"
+                city="New_York"
     else:
-        city="New_York_City"
+        city="New_York"
     temp = util.get_weather_temp(city)
     humidity = util.get_weather_humidity(city)
     windspeed = util.get_weather_windspeed(city)
     minmaxtemp = util.get_weather_tempminmax(city)
     country = util.get_country(city)
+    realcity = util.get_real_city(city)   
     while "_" in city:
             city=city[:city.find("_")]+" "+city[city.find("_")+1:]
     if temp <=0:
@@ -40,8 +41,17 @@ def root( ):
         planet = "Jupiter"
     elif temp >100:
         planet = "Sun"
-    d = { 'city':city, 'temp':temp, 'humidity':humidity, 'windspeed':windspeed, 'minmaxtemp':minmaxtemp, 'country':country }
-    return render_template( 'index.html', d = d, planet = planet)
+    d = { 'city':city, 'temp':temp, 'humidity':humidity, 'windspeed':windspeed, 'minmaxtemp':minmaxtemp, 'country':country, 'realcity':realcity }
+    if realcity != city:
+        if planet == "Saturn":
+            return render_template ( 'IndexSaturnError.html', d = d, planet = planet )
+        else:
+            return render_template( 'IndexError.html', d = d, planet = planet )
+    else:
+        if planet == "Saturn":
+            return render_template ( 'IndexSaturn.html', d = d, planet = planet )
+        else:
+            return render_template( 'index.html', d = d, planet = planet )
 
 if __name__ == '__main__':
     app.debug = True
