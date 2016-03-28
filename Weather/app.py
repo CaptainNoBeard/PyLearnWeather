@@ -50,11 +50,15 @@ def root( ):
     if realcity != city:
         if planet == "Saturn":
             return render_template ( 'IndexSaturnError.html', d = d, planet = planet )
+        elif planet == "Jupiter":
+            return render_template ( 'IndexJupiterError.html', d = d, planet = planet )
         else:
             return render_template( 'IndexError.html', d = d, planet = planet )
     else:
         if planet == "Saturn":
             return render_template ( 'IndexSaturn.html', d = d, planet = planet )
+        elif planet == "Jupiter":
+            return render_template ( 'IndexJupiter.html', d = d, planet = planet )
         else:
             return render_template( 'index.html', d = d, planet = planet )
 

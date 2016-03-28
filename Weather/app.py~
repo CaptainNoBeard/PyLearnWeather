@@ -9,7 +9,9 @@ def root( ):
         city=request.form["city"]
         while " " in city:
             city=city[:city.find(" ")]+"_"+city[city.find(" ")+1:]
-        if city == "" or city == " " or city == "/" or city == "nyc":
+            if city == "" or city == "_" or city == "/" or city == "nyc":
+                city="New_York"
+        if city == "" or city == "_" or city == "/" or city == "nyc":
             city="New_York"
     else:
         city="New_York"
@@ -25,7 +27,6 @@ def root( ):
             city=city[:city.find("_")]+" "+city[city.find("_")+1:]
     if temp <=0:
         planet = "Pluto"
-        temp = "a very cold " + str(temp)
     elif temp >0 and temp <= 20:
         planet = "Uranus"
     elif temp >20 and temp <= 40:

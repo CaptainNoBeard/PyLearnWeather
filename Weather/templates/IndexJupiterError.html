@@ -6,6 +6,6 @@
         <input type="submit" value="Submit">
     </form>
     <h2 style = "color:#00ffff">The temperature in {{ d.realcity }} is {{ d.temp }} degrees Fahrenheit, much like being on {{planet}}. The minimum temperature is {{ d.minmaxtemp }}. The humidity is {{ d.humidity }}%. The wind speed is {{ d.windspeed }} miles per hour.</h2>
-    <img src="/static/{{planet}}.gif" width="500" height="230">
+    <img src="/static/{{planet}}.gif" width="300" height="300">
 	<p style = "color: #ff0000"> '{{ d.city }}' is not recognized in the OpenWeatherMap Database. As a result, what OpenWeatherMap considers to be the closest match will be displayed.<br> If you entered something like 'New York City' and you got this message, try removing 'City' or any other similar phrases. <br>If you entered a real location and still got this message, it could be due to multiple cities having that same name. Try also including the country, for example: 'Sparta, USA.' You will still get this message, but it will have worked.</p>
 </body>
